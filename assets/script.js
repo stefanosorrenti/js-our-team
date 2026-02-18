@@ -34,9 +34,9 @@ Cosa devo fare?
 
 //PER AGGIUNGERE UN MEMBRO DEL TEAM COME  POSSO FARE?
 -Creo un form in HTML (X)
--Seleziono il nodo del form (X)
--Aggiungo un evento sul suo submit
--Nell'evento disattivo il suo comportamento naturale
+-Seleziono il nodo del form e dei suoi input (X)
+-Aggiungo un evento sul suo submit (X)
+-Nell'evento disattivo il suo comportamento naturale (X)
 -Raccolgo tutti dati del form
 -Seleziono il valore di tutti i dati del form
 -Creo un oggetto con tutti i valori
@@ -76,6 +76,12 @@ const rowEL = document.querySelector('div.row') //Selezion i nodi della  DOM che
 
 const formEL = document.querySelector('form.form-control') //Seleziono il nodo del form
 console.log(formEL);
+
+//const inputsEL = document.querySelectorAll(' .form-control input')
+const inputName = document.getElementById('name');
+const inputRole = document.getElementById('role');
+const inputMail = document.getElementById('mail');
+const inputPic = document.getElementById('pro-pic');
 
 
 
@@ -138,7 +144,7 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
         </div>
         <div class="col-md-8">
             <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">
-              <h2 class="card-title h5 fw-bold">${name}</h2>
+              <h2 class="card-title h5 fw-bold">${name.toUpperCase()}</h2>
               <p class="card-text fw-semibold">${role}</p>
               <a class="email text-decoration-none text-info fw-semibold">${email}</a> 
             </div>
@@ -160,8 +166,22 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
 rowEL.innerHTML = cards
 
 
-formEL.addEventListener('submit', function(event){
-  event.preventDefault()
+formEL.addEventListener('submit', function(event){ //Aggiungo un evento sul suo submit
+  event.preventDefault() //Nell'evento disattivo il suo comportamento naturale 
   console.log('Hai cliccato');
+
+  const inputObj = {
+    name: inputName.value,
+    role: inputRole.value,
+    email: inputMail.value,
+    img: inputPic.value
+  }
+  console.log(inputObj);
+  
+  teamMembers.push(inputObj)
+
+  console.log(teamMembers);
+  
+ 
   
 }) 

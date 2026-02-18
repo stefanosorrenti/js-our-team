@@ -3,6 +3,10 @@
 
 /*Utility*/
 
+.card-mw {
+    max-width: 390px;
+}
+
 
 /*Generics*/
 h1 {

@@ -22,10 +22,11 @@ Buon divertimento e confermate lettura come al solito
 
 Cosa devo fare?
 
--Identifico markup da generare
--Seleziono nodi DOM che mi servira
--Creo una variabile d'appoggio
--Creo un ciclo nell'array di oggetti (solita prassi)
+-Identifico markup da generare (X)
+-Seleziono nodi DOM che mi servira (X)
+-Creo una variabile d'appoggio (X)
+-Creo un ciclo nell'array di oggetti (solita prassi) (X)
+-Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
 -Creo una variabile con all'interno il nostro markup
 -Dico al ciclo di che ad ogni iterazione deve inserire il tutto dentro la variabile d'appoggio co le relative proprieta del ciclo
 -Unisco il contento della variabile markup a quello della variabile d'appoggio
@@ -38,7 +39,37 @@ Cosa devo fare?
 
 */
 
+//DATA
 
+//indetifico il markup da generare 
+
+/*
+<div class="card col-4">
+            <!--IMG ROW-->
+            <div class="row">
+              <!--Card img-->
+              <img src="./assets/img/male1.png" class=" col-4 img-fluid rounded-start">
+            </div>
+
+            <div class="col-8">
+              <!--Card body-->
+              <div class="card-body">
+
+                <!--Card title-->
+                <h2 class="card-title">MARCO BIANCHI</h2>
+
+                <!--Card text-->
+                <p class="card-text">
+                  <span class="role ">Designer</span>
+                  <span class="email d-block">mailto:marcobianchi@team.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
+*/
+
+const rowEL = document.querySelector('div.row') //Selezion i nodi della  DOM che mi serviranno
+console.log(rowEL);
 
 
 
@@ -81,3 +112,15 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+//LOGIC
+let cards = '' //Creo una variabile d'appoggio
+
+for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di oggetti (solita prassi)
+  const memeber = teamMembers[i];
+  console.log(`Sono nel ciclo for`);
+  console.log(memeber);
+  
+  
+  
+}

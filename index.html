@@ -18,10 +18,10 @@
 <body>
 
   <!--Header content-->
-  <header class="text-center mt-5">
+  <header class="text-center my-5">
     <div class="container">
       <h1>Meet our Team</h1>
-      <p id="header-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut aut odit, voluptates
+      <p id="header-description" class="mt-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut aut odit, voluptates
         minima eius,
         perspiciatis a nobis porro fuga libero accusamus facilis vitae voluptatem
         tempora sunt! Consequuntur nesciunt beatae provident.
@@ -42,8 +42,37 @@
         </div>
 
       </section>
+      
+      <!--Form section-->
+      <section class="mt-5">
+        <h2 class="text-center">Vuoi aggiungere un nuovo membro nel team?</h2>
+        <p class="text-center fw-semibold text-danger">Compila il form qui sotto!</p>
+        
+        <!--Form-->
+        <form class="form-control">
+
+          <!--Name input-->
+          <label for="name" class="form-label mb-0 mt-1">Nome e Cognome</label>
+          <input type="text" id="name" name="name" placeholder="Scrivi il tuo nome completo" class="form-control">
+
+          <!--Role input-->
+          <label for="role" class="form-label mb-0 mt-1">Ruolo</label>
+          <input type="text" id="role" name="role" placeholder="Scrivi il tuo ruolo" class="form-control">
+
+          <!--Email input-->
+          <label for="mail" class="form-label mb-0 mt-1">Email</label>
+          <input type="email" id="mail" name="mail" placeholder="Scrivi la tua email" class="form-control" required>
+
+          <!--Img input-->
+          <label for="pro-pic" class="form-label mb-0 mt-1">Foto profilo</label>
+          <input type="url" id="pro-pic" name="pro-pic" placeholder="Inserisci un link per la tua foto profilo" class="form-control">
+
+          <button class="btn btn-danger mt-3"> Aggiungi membro</button>
+        </form>
+      </section>
     </div>
   </main>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

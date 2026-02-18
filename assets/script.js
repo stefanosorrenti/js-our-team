@@ -44,28 +44,20 @@ Cosa devo fare?
 //indetifico il markup da generare 
 
 /*
-<div class="card col-4">
-            <!--IMG ROW-->
-            <div class="row">
-              <!--Card img-->
-              <img src="./assets/img/male1.png" class=" col-4 img-fluid rounded-start">
+<div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="./assets/img/male1.png" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">
+              <h2 class="card-title h5 fw-bold">Marco Bianchi</h2>
+              <p class="card-text fw-semibold">Designer</p>
+              <a class="email text-decoration-none text-info fw-semibold">mailto:marcobianchi@team.com</a> 
             </div>
-
-            <div class="col-8">
-              <!--Card body-->
-              <div class="card-body">
-
-                <!--Card title-->
-                <h2 class="card-title">MARCO BIANCHI</h2>
-
-                <!--Card text-->
-                <p class="card-text">
-                  <span class="role ">Designer</span>
-                  <span class="email d-block">mailto:marcobianchi@team.com</span>
-                </p>
-              </div>
-            </div>
-          </div>
+        </div>
+    </div>
+</div>
 */
 
 const rowEL = document.querySelector('div.row') //Selezion i nodi della  DOM che mi serviranno
@@ -122,8 +114,24 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
   //console.log(memeber);
   const {name, role, email, img} = memeber //Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
   console.log(name, role, email, img);
-  
-  let markup = `Ciao mi chiamo ${name}` //Creo una variabile con all'interno il nostro markup
+
+  //Creo una variabile con all'interno il nostro markup e vado ad interpolare le variabili con le porprietà
+  let markup = `
+  <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="./assets/${img}" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">
+              <h2 class="card-title h5 fw-bold">${name}</h2>
+              <p class="card-text fw-semibold">${role}</p>
+              <a class="email text-decoration-none text-info fw-semibold">${email}</a> 
+            </div>
+        </div>
+    </div>
+</div>
+  ` 
 
   cards += markup //Unisco il contento della variabile markup a quello della variabile d'appoggio
 
@@ -135,4 +143,4 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
 console.log(cards);
 
 //InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
-/* rowEL.innerHTML = cards */
+rowEL.innerHTML = cards

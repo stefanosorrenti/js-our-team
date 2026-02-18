@@ -5,9 +5,6 @@
 
 
 /*Generics*/
-
-/*--------HEADER--------*/
-
 h1 {
     color: rgb(207, 17, 80);
     font-size: 40px;
@@ -15,8 +12,17 @@ h1 {
     
 }
 
+
+/*--------HEADER--------*/
 #header-description {
 
     font-size: large;
     color: black;
 }
+
+
+
+
+/*--------MAIN*--------/
+
+/*Cards*/

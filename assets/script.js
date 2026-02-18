@@ -135,4 +135,4 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
 console.log(cards);
 
 //InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
-rowEL.innerHTML = cards
+/* rowEL.innerHTML = cards */

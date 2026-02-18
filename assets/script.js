@@ -32,6 +32,16 @@ Cosa devo fare?
 -Unisco il contento della variabile markup a quello della variabile d'appoggio
 -InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
 
+//PER AGGIUNGERE UN MEMBRO DEL TEAM COME  POSSO FARE?
+-Creo un form
+-Aggiungo un evento sul suo submit
+-Nell'evento disattivo il suo comportamento naturale
+-Raccolgo tutti dati del form
+-Seleziono il valore di tutti i dati del form
+-Creo un oggetto con tutti i valori
+
+-Pusho l'oggetto nel 'array di oggetti
+
 
 
 

@@ -33,7 +33,8 @@ Cosa devo fare?
 -InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
 
 //PER AGGIUNGERE UN MEMBRO DEL TEAM COME  POSSO FARE?
--Creo un form
+-Creo un form in HTML (X)
+-Seleziono il nodo del form (X)
 -Aggiungo un evento sul suo submit
 -Nell'evento disattivo il suo comportamento naturale
 -Raccolgo tutti dati del form
@@ -71,7 +72,10 @@ Cosa devo fare?
 */
 
 const rowEL = document.querySelector('div.row') //Selezion i nodi della  DOM che mi serviranno
-console.log(rowEL);
+//console.log(rowEL);
+
+const formEL = document.querySelector('form.form-control') //Seleziono il nodo del form
+console.log(formEL);
 
 
 
@@ -120,10 +124,10 @@ let cards = '' //Creo una variabile d'appoggio
 
 for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di oggetti (solita prassi)
   const memeber = teamMembers[i];
-  console.log(`Sono nel ciclo for`);
+  //console.log(`Sono nel ciclo for`);
   //console.log(memeber);
   const {name, role, email, img} = memeber //Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
-  console.log(name, role, email, img);
+  //console.log(name, role, email, img);
 
   //Creo una variabile con all'interno il nostro markup e vado ad interpolare le variabili con le porprietà
   let markup = `
@@ -150,7 +154,14 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
   
 }
 
-console.log(cards);
+//console.log(cards);
 
 //InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
 rowEL.innerHTML = cards
+
+
+formEL.addEventListener('submit', function(event){
+  event.preventDefault()
+  console.log('Hai cliccato');
+  
+}) 

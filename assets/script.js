@@ -37,12 +37,11 @@ Cosa devo fare?
 -Seleziono il nodo del form e dei suoi input (X)
 -Aggiungo un evento sul suo submit (X)
 -Nell'evento disattivo il suo comportamento naturale (X)
--Raccolgo tutti dati del form
--Seleziono il valore di tutti i dati del form
--Creo un oggetto con tutti i valori
-
--Pusho l'oggetto nel 'array di oggetti
-
+-Raccolgo tutti dati del form (X)
+-Seleziono il valore di tutti i dati del form e me li savo (X)
+-Creo un oggetto con tutti i valori (X)
+-Pusho l'oggetto nel 'array di oggetti (X)
+-Ripeto l'operazione stampa del markup
 
 
 
@@ -78,6 +77,8 @@ const formEL = document.querySelector('form.form-control') //Seleziono il nodo d
 console.log(formEL);
 
 //const inputsEL = document.querySelectorAll(' .form-control input')
+
+//Seleziono il valore di tutti i dati del form e me li salvo
 const inputName = document.getElementById('name');
 const inputRole = document.getElementById('role');
 const inputMail = document.getElementById('mail');
@@ -170,7 +171,7 @@ formEL.addEventListener('submit', function(event){ //Aggiungo un evento sul suo 
   event.preventDefault() //Nell'evento disattivo il suo comportamento naturale 
   console.log('Hai cliccato');
 
-  const inputObj = {
+  const inputObj = {  //Creo un oggetto con tutti i valori (X)
     name: inputName.value,
     role: inputRole.value,
     email: inputMail.value,
@@ -178,10 +179,14 @@ formEL.addEventListener('submit', function(event){ //Aggiungo un evento sul suo 
   }
   console.log(inputObj);
   
-  teamMembers.push(inputObj)
+  teamMembers.push(inputObj) //Pusho l'oggetto nel 'array di oggetti
 
   console.log(teamMembers);
-  
- 
-  
+
+
+rowEL.innerHTML = cards
+
 }) 
+
+
+

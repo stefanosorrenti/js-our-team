@@ -31,7 +31,7 @@ Cosa devo fare?
 -Dico al ciclo di che ad ogni iterazione deve inserire il tutto dentro la variabile d'appoggio co le relative proprieta del ciclo
 -Unisco il contento della variabile markup a quello della variabile d'appoggio
 -InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
-------NEL CICLO------
+
 
 
 
@@ -119,8 +119,20 @@ let cards = '' //Creo una variabile d'appoggio
 for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di oggetti (solita prassi)
   const memeber = teamMembers[i];
   console.log(`Sono nel ciclo for`);
-  console.log(memeber);
+  //console.log(memeber);
+  const {name, role, email, img} = memeber //Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
+  console.log(name, role, email, img);
   
+  let markup = `Ciao mi chiamo ${name}` //Creo una variabile con all'interno il nostro markup
+
+  cards += markup //Unisco il contento della variabile markup a quello della variabile d'appoggio
+
+
   
   
 }
+
+console.log(cards);
+
+//InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
+rowEL.innerHTML = cards

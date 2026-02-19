@@ -155,8 +155,8 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
 
   
 
-  console.log(teamMembers.at(-1));
-  const lastMember = teamMembers.at(-1)
+  //console.log(teamMembers.at(-1));
+  const lastMember = teamMembers.at(-1) //mi salvo in una variabile l'ultimo elemento del mio array array d'oggetti (che sarà quello pushato)
   
   const{name, role, email, img} = lastMember //Destrutturo l'ultimo oggetto
   
@@ -164,7 +164,7 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
   let lastMarkup = ` 
   <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
     <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
             <img src="./assets/${img}" class="img-fluid " alt="...">
         </div>
         <div class="col-md-8">

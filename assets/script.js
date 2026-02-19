@@ -165,7 +165,7 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
   <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
     <div class="row g-0">
         <div class="col-12 col-md-4">
-            <img src="./assets/${img}" class="img-fluid " alt="...">
+            <img src="${img}" class="img-fluid " alt="...">
         </div>
         <div class="col-md-8">
             <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">

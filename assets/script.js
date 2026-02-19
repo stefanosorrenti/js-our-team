@@ -153,13 +153,20 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
 
   teamMembers.push(inputObj) //Pusho l'oggetto nel 'array di oggetti
 
-  let lastMemberTeam = ''
-  for (let i = 0; i < teamMembers.length; i++) {
-    const lastMember = teamMembers.at(-1)
-    console.log(lastMember);
-    const{name, role, email, img} = lastMember
 
-    let lastMarkup = `
+//Ripeto l'operazione stampa del markup solo dell'ultimo oggetto e lo sommo a l markup di prima (X)
+
+  let lastMemberTeam = '' //variabile d'appoggio
+
+  for (let i = 0; i < teamMembers.length; i++) { //ciclo all'interno dell'array con il nuovo oggetto
+
+    const lastMember = teamMembers.at(-1) //Salvo in una variabile l'ultimo oggetto (quello pushato)
+    //console.log(lastMember);
+    const{name, role, email, img} = lastMember //Destrutturo l'ultimo oggetto
+
+
+    //markup da restituire
+    let lastMarkup = ` 
   <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
     <div class="row g-0">
         <div class="col-md-4">
@@ -182,7 +189,7 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
   
 
 
-  rowEL.innerHTML = cardsTemplate + lastMemberTeam
+  rowEL.innerHTML = cardsTemplate + lastMemberTeam //sommo il markup nuovo a quello vecchio
   
   
 })

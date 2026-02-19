@@ -41,7 +41,7 @@ Cosa devo fare?
 -Seleziono il valore di tutti i dati del form e me li savo (X)
 -Creo un oggetto con tutti i valori (X)
 -Pusho l'oggetto nel 'array di oggetti (X)
--Ripeto l'operazione stampa del markup
+-Ripeto l'operazione stampa del markup solo dell'ultimo oggetto e lo sommo a l markup di prima (X)
 
 
 

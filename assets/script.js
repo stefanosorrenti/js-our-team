@@ -127,17 +127,39 @@ const teamMembers = [
 ];
 
 //LOGIC
-let cards = '' //Creo una variabile d'appoggio
 
-for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di oggetti (solita prassi)
-  const memeber = teamMembers[i];
-  //console.log(`Sono nel ciclo for`);
-  //console.log(memeber);
-  const {name, role, email, img} = memeber //Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
-  //console.log(name, role, email, img);
+const cardsTemplate = getCardTemplate(teamMembers)
 
-  //Creo una variabile con all'interno il nostro markup e vado ad interpolare le variabili con le porprietà
-  let markup = `
+
+
+
+//console.log(cards);
+
+//InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
+rowEL.innerHTML = cardsTemplate
+
+
+formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul suo submit
+  event.preventDefault() //Nell'evento disattivo il suo comportamento naturale 
+  console.log('Hai cliccato');
+
+  const inputObj = {  //Creo un oggetto con tutti i valori (X)
+    name: inputName.value,
+    role: inputRole.value,
+    email: inputMail.value,
+    img: inputPic.value
+  }
+  console.log(inputObj);
+
+  teamMembers.push(inputObj) //Pusho l'oggetto nel 'array di oggetti
+
+  let lastMemberTeam = ''
+  for (let i = 0; i < teamMembers.length; i++) {
+    const lastMember = teamMembers.at(-1)
+    console.log(lastMember);
+    const{name, role, email, img} = lastMember
+
+    let lastMarkup = `
   <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
     <div class="row g-0">
         <div class="col-md-4">
@@ -152,41 +174,62 @@ for (let i = 0; i < teamMembers.length; i++) { //Creo un ciclo nell'array di ogg
         </div>
     </div>
 </div>
-  ` 
+  `
 
-  cards += markup //Unisco il contento della variabile markup a quello della variabile d'appoggio
-
-
-  
-  
-}
-
-//console.log(cards);
-
-//InnerHTML sull nodo inseredo il contenuto della variabile d'appoggio
-rowEL.innerHTML = cards
-
-
-formEL.addEventListener('submit', function(event){ //Aggiungo un evento sul suo submit
-  event.preventDefault() //Nell'evento disattivo il suo comportamento naturale 
-  console.log('Hai cliccato');
-
-  const inputObj = {  //Creo un oggetto con tutti i valori (X)
-    name: inputName.value,
-    role: inputRole.value,
-    email: inputMail.value,
-    img: inputPic.value
+  lastMemberTeam = lastMarkup
+    
   }
-  console.log(inputObj);
   
-  teamMembers.push(inputObj) //Pusho l'oggetto nel 'array di oggetti
-
-  console.log(teamMembers);
 
 
-rowEL.innerHTML = cards
+  rowEL.innerHTML = cardsTemplate + lastMemberTeam
+  
+  
+})
 
-}) 
+
+//FUNCTIONS
+
+function getCardTemplate(obj) {
+
+  let cards = '' //Creo una variabile d'appoggio
+
+  for (let i = 0; i < obj.length; i++) { //Creo un ciclo nell'array di oggetti (solita prassi)
+    const memeber = obj[i];
+
+    //console.log(`Sono nel ciclo for`);
+    //console.log(memeber);
+    const { name, role, email, img } = memeber //Destrutturo CIASCUN SINGOLO oggetto all'interno del mio array.
+
+    //console.log(name, role, email, img);
+
+    //Creo una variabile con all'interno il nostro markup e vado ad interpolare le variabili con le porprietà
+    let markup = `
+  <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="./assets/${img}" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">
+              <h2 class="card-title h5 fw-bold">${name.toUpperCase()}</h2>
+              <p class="card-text fw-semibold">${role}</p>
+              <a class="email text-decoration-none text-info fw-semibold">${email}</a> 
+            </div>
+        </div>
+    </div>
+</div>
+  `
+
+    cards += markup //Unisco il contento della variabile markup a quello della variabile d'appoggio
 
 
 
+
+  }
+
+return cards
+
+
+
+}

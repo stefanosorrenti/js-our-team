@@ -74,7 +74,7 @@ const rowEL = document.querySelector('div.row') //Selezion i nodi della  DOM che
 //console.log(rowEL);
 
 const formEL = document.querySelector('form.form-control') //Seleziono il nodo del form
-console.log(formEL);
+//console.log(formEL);
 
 //const inputsEL = document.querySelectorAll(' .form-control input')
 
@@ -149,14 +149,41 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
     email: inputMail.value,
     img: inputPic.value
   }
-  console.log(inputObj);
+  //console.log(inputObj);
 
   teamMembers.push(inputObj) //Pusho l'oggetto nel 'array di oggetti
 
+  
 
-//Ripeto l'operazione stampa del markup solo dell'ultimo oggetto e lo sommo a l markup di prima (X)
+  console.log(teamMembers.at(-1));
+  const lastMember = teamMembers.at(-1)
+  
+  const{name, role, email, img} = lastMember //Destrutturo l'ultimo oggetto
+  
+  //Inserisco al markup con gli elementi destrutturati
+  let lastMarkup = ` 
+  <div class="card mb-3 border-0 bg-black rounded-0 px-0 card-mw">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="./assets/${img}" class="img-fluid " alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body text-white d-flex flex-column justify-content-center align-items-start">
+              <h2 class="card-title h5 fw-bold">${name.toUpperCase()}</h2>
+              <p class="card-text fw-semibold">${role}</p>
+              <a class="email text-decoration-none text-info fw-semibold">${email}</a> 
+            </div>
+        </div>
+    </div>
+</div>
+  `
 
-  let lastMemberTeam = '' //variabile d'appoggio
+rowEL.innerHTML = cardsTemplate + lastMarkup //sommo il markup nuovo a quello vecchio */
+
+
+
+
+  /* let lastMemberTeam = '' //variabile d'appoggio
 
   for (let i = 0; i < teamMembers.length; i++) { //ciclo all'interno dell'array con il nuovo oggetto
 
@@ -189,7 +216,7 @@ formEL.addEventListener('submit', function (event) { //Aggiungo un evento sul su
   
 
 
-  rowEL.innerHTML = cardsTemplate + lastMemberTeam //sommo il markup nuovo a quello vecchio
+  rowEL.innerHTML = cardsTemplate + lastMemberTeam //sommo il markup nuovo a quello vecchio */
   
   
 })
